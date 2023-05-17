@@ -130,6 +130,8 @@ def abre():
         hora_agora = datetime.now().strftime('%H:%M') 
         
 abre() 
+
+#mudei para teste
                
               
            
