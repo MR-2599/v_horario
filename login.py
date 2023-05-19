@@ -2,6 +2,7 @@ import hashlib
 import json
 import os
 import tkinter as tk
+from tkinter import messagebox
 from main import abre
 
 def save_login(nome, senha):
@@ -11,12 +12,12 @@ def save_login(nome, senha):
         with open('data.json', 'r') as file:
             data = json.load(file)
     data[nome] = hashed_password
-    with open('data.json', 'w') as file:
+    with open('data.json', 'w', encoding='utf-8') as file:
         json.dump(data, file)
 
 def check_login(nome, senha):
     hashed_password = hashlib.sha256(senha.encode()).hexdigest()
-    with open('data.json', 'r') as file:
+    with open('data.json', 'r', encoding='utf8') as file:
         data = json.load(file)
         saved_password = data.get(nome)
         if saved_password == hashed_password:
@@ -30,21 +31,24 @@ def screen():
         senha = entry_senha.get().strip()
 
         if nome and senha:
-            save_login(nome, senha)
-            print("Cadastro realizado com sucesso!")
+            if check_login(nome, senha):
+                messagebox.showwarning('MR-Systems', 'Usuário já cadastrado no sistema!')
+            else:
+                save_login(nome, senha)
+                messagebox.showinfo('MR-Systems', 'Cadastro realizado com sucesso!')
         else:
-            print("Por favor, preencha todos os campos.")
+            messagebox.showwarning('MR-Systems', 'Por favor, preencha todos os campos.')
 
     def login():
         nome = entry_nome.get().strip().capitalize()
         senha = entry_senha.get().strip()
 
         if check_login(nome, senha):
-            print("Login realizado com sucesso!")
+            messagebox.showinfo('MR-Systems', 'Login realizado com sucesso!')
             root.destroy()  # Fechar a janela de login após o login
             abre()
         else:
-            print("Nome de usuário ou senha incorretos.")
+            messagebox.showwarning('MR-Systems', 'Nome de usuário ou senha incorretos.')
 
     root = tk.Tk()
     root.geometry("300x200")
@@ -71,6 +75,7 @@ def screen():
     root.mainloop()
 
 screen()
+
 
 
 
