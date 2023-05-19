@@ -27,7 +27,7 @@ def check_login(nome, senha):
 
 def screen():
     def cadastrar():
-        nome = entry_nome.get().strip().capitalize()
+        nome = entry_nome.get().strip()
         senha = entry_senha.get().strip()
 
         if nome and senha:
@@ -40,7 +40,7 @@ def screen():
             messagebox.showwarning('MR-Systems', 'Por favor, preencha todos os campos.')
 
     def login():
-        nome = entry_nome.get().strip().capitalize()
+        nome = entry_nome.get().strip()
         senha = entry_senha.get().strip()
 
         if check_login(nome, senha):
