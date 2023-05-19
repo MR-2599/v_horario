@@ -1,7 +1,7 @@
-import tkinter as tk
 import hashlib
 import json
 import os
+import tkinter as tk
 from main import abre
 
 def save_login(nome, senha):

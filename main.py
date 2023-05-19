@@ -129,7 +129,7 @@ def abre():
         time.sleep(2)
         hora_agora = datetime.now().strftime('%H:%M') 
         
-abre() 
+ 
 
 
                
