@@ -8,16 +8,16 @@ from main import abre
 def save_login(nome, senha):
     hashed_password = hashlib.sha256(senha.encode()).hexdigest()
     data = {}
-    if os.path.exists('data.json'):
-        with open('data.json', 'r') as file:
+    if os.path.exists('C:/Users/marco/Desktop/v_horario/data.json'):
+        with open('C:/Users/marco/Desktop/v_horario/data.json', 'r') as file:
             data = json.load(file)
     data[nome] = hashed_password
-    with open('data.json', 'w', encoding='utf-8') as file:
+    with open('C:/Users/marco/Desktop/v_horario/data.json', 'w', encoding='utf-8') as file:
         json.dump(data, file)
 
 def check_login(nome, senha):
     hashed_password = hashlib.sha256(senha.encode()).hexdigest()
-    with open('data.json', 'r', encoding='utf8') as file:
+    with open('C:/Users/marco/Desktop/v_horario/data.json', 'r', encoding='utf8') as file:
         data = json.load(file)
         saved_password = data.get(nome)
         if saved_password == hashed_password:
@@ -51,6 +51,7 @@ def screen():
             messagebox.showwarning('MR-Systems', 'Nome de usuário ou senha incorretos.')
 
     root = tk.Tk()
+    root.iconbitmap('C:/Users/marco/Desktop/v_horario/icon2.ico')
     root.geometry("300x200")
     root.title("MR-Systems")
 
