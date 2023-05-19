@@ -2,7 +2,7 @@
 Verifica horário para evitar atrazos na execução de serviços.
 Desenvolvi este sistema para ajudar em uma tarefa que se repete durante todo o expediente de trabalho
 O sistema deve fazer a leitura do documento e trazer impresso na tela e com um áudio avisando sobre o vencimento 
-do algum dos protocolos que estão com um prazo de duas horas restantes e também os que já estão vencidos,assim
+do algum dos protocolos que estão com um prazo de duas horas restantes e também os que já estão vencidos, assim
 facilitando o acompanhamento das equipes responsáveis pela manutenção do sistema de água e esgoto da minha cidade
 diminuíndo o índice de atraso dos serviços e evitando multa da empresa contratante.
 
