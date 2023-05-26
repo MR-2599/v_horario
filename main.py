@@ -12,6 +12,7 @@ from time import sleep
 from tkinter import messagebox
 import sys
 
+<<<<<<< HEAD
    
 def abre():
     vencendo_2h = []
@@ -23,6 +24,15 @@ def abre():
     root.iconbitmap(icon2_path)
     root.geometry('600x600+400+50')
     
+=======
+def abre():
+    vencendo_2h = []
+    vencendo_atualizada = []
+
+    root = tk.Tk()
+    root.withdraw()
+    root.iconbitmap("C:/Users/marco/Desktop/v_horario/icon2.ico")
+>>>>>>> 8359f42254e520c76ba2ce6d408d8411a39cfa06
     
     # Abre uma janela de diálogo para o usuário escolher o arquivo
     mensagem = messagebox.askyesno('MR-TEC', 'Selecione um arquivo em seu PC')
@@ -38,7 +48,10 @@ def abre():
     
     msg_aguardar()
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8359f42254e520c76ba2ce6d408d8411a39cfa06
     def Verifica_vencimento():
         
         codigos_4h = ['10', '50', '90', '110', '151', '365', '370', '1350', '1360', '1380', '1430',\
@@ -105,16 +118,25 @@ def abre():
                 alarme2()
                 vencendo_atualizada.append(l)
                 print(f'{"---"*40} \n {vencendo_atualizada[-1:]}')
+<<<<<<< HEAD
                 
                 
     def alarme1():
         som1_path= os.path.join(os.path.dirname(__file__),'notification_sounds', 'som1.mp3')
         pygame.init()
         pygame.mixer.music.load(som1_path)
+=======
+            
+                
+    def alarme1():
+        pygame.init()
+        pygame.mixer.music.load('C:/Users/marco/Desktop/v_horario/som1.mp3')
+>>>>>>> 8359f42254e520c76ba2ce6d408d8411a39cfa06
         pygame.mixer.music.play()
         
                 
     def alarme2():
+<<<<<<< HEAD
         som2_path = os.path.join(os.path.dirname(__file__), 'notification_sounds', 'som2.mp3')
         pygame.init()
         pygame.mixer.music.load(som2_path)
@@ -185,6 +207,29 @@ print('Pressione (s) para sair')
 
 
 
+=======
+        pygame.init()
+        pygame.mixer.music.load('C:/Users/marco/Desktop/v_horario/som2.mp3')
+        pygame.mixer.music.play()            
+                
+    def job():
+        Verifica_vencimento()
+        atualiza()
+        if len(vencendo_atualizada) < 1:
+            os.system('cls')
+            print(f'Ainda não há serviços vencendo nas próximas duas horas, estou atento verifiquei as {hora_agora} >>>')
+            sleep(60)
+    
+    schedule.every(5).seconds.do(job)
+
+
+    while True:
+        schedule.run_pending()
+        time.sleep(2)
+        hora_agora = datetime.now().strftime('%H:%M') 
+        
+ 
+>>>>>>> 8359f42254e520c76ba2ce6d408d8411a39cfa06
 
 
                
