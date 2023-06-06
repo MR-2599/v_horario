@@ -3,9 +3,7 @@ import json
 import os
 import tkinter as tk
 from tkinter import messagebox
-from main import abre
-import keyboard
-
+from rules import abre
 
 def save_login(nome, senha):
     hashed_password = hashlib.sha256(senha.encode()).hexdigest()
@@ -58,9 +56,9 @@ def screen():
             exibe()  # Abrir o sistema principal após o login
         else:
             messagebox.showwarning('MR-Systems', 'Nome de usuário ou senha incorretos.')
-    icon2_path = os.path.join(os.path.dirname(__file__), 'icon2.ico')
+    
     login_window = tk.Tk()
-    login_window.iconbitmap(icon2_path)
+    login_window.iconbitmap('./icons/icon2.ico')
     login_window.geometry("300x200+480+200")
     login_window.title("MR-Systems")
 
@@ -84,7 +82,7 @@ def screen():
     
     login_window.mainloop()
 
-screen()
+
 
 
 
