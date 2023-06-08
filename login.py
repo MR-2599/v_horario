@@ -3,7 +3,10 @@ import json
 import os
 import tkinter as tk
 from tkinter import messagebox
-from rules import abre
+from rules import Vencimentos
+
+
+
 
 def save_login(nome, senha):
     hashed_password = hashlib.sha256(senha.encode()).hexdigest()
@@ -44,7 +47,9 @@ def screen():
     
     def exibe():
         login_window.destroy()  # Fechar a janela de login
-        abre()  # Chamar a função abre() do arquivo main.py
+        a = Vencimentos()
+        a.abre()
+         # Chamar a função abre() do arquivo main.py
         
     
     def login():
